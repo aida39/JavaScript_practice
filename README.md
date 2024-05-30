@@ -1,1 +1,1 @@
-# JavaScript_practive
+これはJavaScriptの学習用です
