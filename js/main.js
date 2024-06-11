@@ -1,23 +1,23 @@
-//例外処理
-// try {
-//   console.log("try節:この行は実行されます");
-//   undefinedFunction();
-//   console.log("try節:この行はスキップされます");
-// } catch (error) {
-//   console.log("catch節:この行は実行されます");
-//   console.log(error.message);
-// } finally {
-//   console.log("finally節:この行は実行されます");
-// }
+例外処理
+try {
+  console.log("try節:この行は実行されます");
+  undefinedFunction();
+  console.log("try節:try節内でエラー発生した場合、この行はスキップされます");
+} catch (error) {
+  console.log("catch節:エラー発生時のみ、この行は実行されます");
+  console.log(error.message);
+} finally {
+  console.log("finally節:エラー発生の有無に関わらず、この行は実行されます");
+}
 
 // デバッグ
-document.getElementById("section-2").style.color = "red";
+// document.getElementById("section-2").style.color = "red";
 
-var baseElement = document.getElementById("section-2");
-var section2node2 = baseElement.childNodes[5];
-section2node2.innerHTML = "子2は変更されました";
+// var baseElement = document.getElementById("section-2");
+// var section2node2 = baseElement.childNodes[5];
+// section2node2.innerHTML = "子2は変更されました";
 
-console.log(baseElement.childNodes);
+// console.log(baseElement.childNodes);
 
 // DOM操作
 // const button = document.querySelector("button");
@@ -94,3 +94,9 @@ console.log(baseElement.childNodes);
 // } else {
 //   alert("リロードしてやり直してください");
 // }
+
+const button = document.querySelector("button");
+button.addEventListener("click", function () {
+  const className = prompt("クラス名を入力してください");
+  document.getElementsByClassName(className)[0].style.color = "red";
+});
